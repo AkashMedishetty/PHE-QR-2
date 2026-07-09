@@ -1,6 +1,15 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
+
+function AgendaFab() {
+  return (
+    <Link href="/agenda" className="agenda-fab">
+      🗓️ Scientific Agenda
+    </Link>
+  )
+}
 
 export default function PDFViewer() {
   const [error, setError] = useState<string | null>(null)
@@ -113,12 +122,16 @@ export default function PDFViewer() {
               📥 Download PDF
             </button>
             
-            <button 
+            <button
               onClick={handleIOSView}
               className="ios-view-button ios-view-button-secondary"
             >
               Open in New Tab
             </button>
+
+            <Link href="/agenda" className="ios-view-button ios-agenda-button">
+              🗓️ Interactive Scientific Agenda
+            </Link>
           </div>
 
           <div className="ios-instructions">
@@ -161,12 +174,16 @@ export default function PDFViewer() {
               📥 Download PDF
             </button>
             
-            <button 
+            <button
               onClick={handleIOSView}
               className="ios-view-button ios-view-button-secondary"
             >
               Open in New Tab
             </button>
+
+            <Link href="/agenda" className="ios-view-button ios-agenda-button">
+              🗓️ Interactive Scientific Agenda
+            </Link>
           </div>
 
           <div className="ios-instructions">
@@ -209,12 +226,16 @@ export default function PDFViewer() {
               📥 Download PDF
             </button>
             
-            <button 
+            <button
               onClick={handleIOSView}
               className="ios-view-button ios-view-button-secondary"
             >
               Open in New Tab
             </button>
+
+            <Link href="/agenda" className="ios-view-button ios-agenda-button">
+              🗓️ Interactive Scientific Agenda
+            </Link>
           </div>
 
           <div className="ios-instructions">
@@ -236,6 +257,7 @@ export default function PDFViewer() {
   // Non-iOS rendering with iframe
   return (
     <div className="pdf-container">
+      <AgendaFab />
       <iframe
         src="/brochure.pdf"
         className="pdf-viewer"

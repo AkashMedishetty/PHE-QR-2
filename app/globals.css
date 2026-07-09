@@ -448,3 +448,42 @@ body {
     max-width: 280px;
   }
 }
+
+/* Floating Scientific Agenda button (over PDF iframe) */
+.agenda-fab {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #0d7377;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 0.8rem 1.3rem;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(11, 46, 51, 0.35);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.agenda-fab:hover {
+  background: #0a5c5f;
+  transform: translateY(-2px);
+}
+
+/* Agenda link in the iOS download view */
+.ios-agenda-button {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: rgba(232, 183, 58, 0.25);
+  border: 2px solid rgba(232, 183, 58, 0.5);
+}
+
+.ios-agenda-button:hover {
+  background: rgba(232, 183, 58, 0.4);
+  border-color: rgba(232, 183, 58, 0.7);
+}

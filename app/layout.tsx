@@ -8,8 +8,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'QR Badge Brochure Viewer',
-  description: 'View event brochures via QR code',
+  title: 'FEHMICON 2026 | FehmiCare Hospital',
+  description: 'FEHMICON 2026 — Artificial Intelligence in Obstetrics and Gynaecology. Event brochure and interactive scientific agenda.',
 }
 
 export const viewport: Viewport = {
