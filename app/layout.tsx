@@ -2,14 +2,15 @@ import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'FEHMICON 2026 | FehmiCare Hospital',
-  description: 'FEHMICON 2026 — Artificial Intelligence in Obstetrics and Gynaecology. Event brochure and interactive scientific agenda.',
+  title: 'R.I.S.E. Program | AOI · Citizens Specialty Hospital',
+  description:
+    'R.I.S.E. Program (Robotic Integrated Surgical Education) — Largest Robotix Conclave in Hyderabad. Live surgical demonstrations & keynotes: redefining robotic surgeries in cancer care. Interactive scientific agenda.',
 }
 
 export const viewport: Viewport = {
@@ -17,7 +18,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: '#ffffff',
+  themeColor: '#1e1b4b',
 }
 
 export default function RootLayout({
@@ -31,8 +32,7 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        {/* Production optimization for PDF rendering */}
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
       </head>
       <body className={inter.className}>{children}</body>

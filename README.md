@@ -1,21 +1,14 @@
-# QR Badge Brochure Viewer
+# R.I.S.E. Program — Badge QR Agenda
 
-A simple Next.js app that serves a PDF brochure via QR code for event badges.
+Interactive scientific agenda for the **R.I.S.E. Program** (Robotic Integrated Surgical Education) — the largest Robotix conclave in Hyderabad, hosted by ASI, American Oncology Institute (AOI) and Citizens Specialty Hospital. Attendees scan the QR code on their badge and land on the live agenda.
 
 ## Features
 
-- **Direct PDF viewing**: No download required, PDF opens directly in browser
-- **Mobile-friendly**: Responsive design that works on all devices
-- **No borders or scroll bars**: Clean, full-screen PDF viewing experience
-- **Static QR code**: Same QR code works forever, just update the PDF file
-- **Easy updates**: Replace the PDF file and redeploy to update the brochure
-
-## How it works
-
-1. The app serves a PDF file from `public/fehmicon-2026-brochure.pdf`
-2. QR codes point to your domain (e.g., `https://your-app.vercel.app`)
-3. When scanned, the QR code opens the PDF directly in the browser
-4. To update the brochure, simply replace `public/fehmicon-2026-brochure.pdf` and redeploy
+- **Interactive agenda**: full scientific program with live surgeries, video lectures and ceremonies
+- **LIVE tracking**: on the event day, the current session is highlighted with a LIVE pill and a "happening now" banner (IST)
+- **Search**: filter by procedure, speaker or chairperson
+- **Mobile-first**: designed for a badge-QR scan on a phone
+- **Static QR code**: the QR points at the domain root — update the agenda and redeploy, no badge reprints
 
 ## Setup
 
@@ -24,50 +17,36 @@ A simple Next.js app that serves a PDF brochure via QR code for event badges.
    npm install
    ```
 
-2. **Add your brochure:**
-   - Replace `public/fehmicon-2026-brochure.pdf` with your event brochure PDF
+2. **Run locally:**
+   ```bash
+   npm run dev
+   ```
 
 3. **Deploy to Vercel:**
-   ```bash
-   npm run build
-   ```
-   - Connect your GitHub repo to Vercel
-   - Deploy automatically
+   - Connect this GitHub repo to Vercel and deploy
 
-4. **Get your QR code:**
-   - Visit `https://your-app.vercel.app/admin`
-   - Copy the QR code for your badges
+4. **Get the badge QR code:**
+   - Visit `https://your-app.vercel.app/admin` and copy the QR code
 
-## File Structure
+## Updating the agenda
+
+All program content lives in [`app/agenda/data.ts`](app/agenda/data.ts):
+
+- `EVENT` — event name, hosts, venue, hours. Set `EVENT.date` (`YYYY-MM-DD`) and `EVENT.dateLabel` once the event date is fixed to enable the LIVE indicators on the day.
+- `AGENDA` — the list of sessions (`surgery` / `lecture` / `ceremony` / `break`), each with time, topic, speakers and chairpersons.
+
+Commit and push — Vercel redeploys, and the same QR code shows the updated program.
+
+## File structure
 
 ```
 ├── app/
-│   ├── page.tsx          # Main PDF viewer page
-│   ├── admin/page.tsx    # Admin page with QR code
-│   ├── api/pdf/route.ts  # API endpoint to serve PDF
-│   └── layout.tsx        # App layout
-├── public/
-│   └── fehmicon-2026-brochure.pdf      # Your event brochure (replace this)
+│   ├── page.tsx              # Home — renders the agenda
+│   ├── agenda/
+│   │   ├── data.ts           # Event details + full program (edit this)
+│   │   ├── AgendaView.tsx    # Agenda UI (search, LIVE tracking)
+│   │   └── agenda.css        # R.I.S.E. theme (navy / gold / cyan)
+│   ├── admin/page.tsx        # Badge QR code generator
+│   └── layout.tsx            # Metadata and viewport
 └── package.json
 ```
-
-## Updating the Brochure
-
-1. Replace `public/fehmicon-2026-brochure.pdf` with your new brochure
-2. Commit and push to GitHub
-3. Vercel will automatically redeploy
-4. The same QR code will now show the updated brochure
-
-## Customization
-
-- **Domain**: The QR code automatically uses your current domain
-- **Styling**: Modify `app/globals.css` for different colors/layouts
-- **PDF name**: Change the filename in `app/api/pdf/route.ts` if needed
-
-## Mobile Optimization
-
-The app is fully responsive and optimized for mobile devices:
-- Full-screen PDF viewing
-- No browser UI elements
-- Touch-friendly interface
-- Fast loading times

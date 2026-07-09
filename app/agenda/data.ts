@@ -1,181 +1,150 @@
-// FEHMICON 2026 Scientific Program — Sunday, 12th July 2026
-// Venue: Ghulam Ahmed Hall, Sultan Uloom Educational Society, MJ College, Banjara Hills-3, Hyderabad
+// R.I.S.E. PROGRAM (Robotic Integrated Surgical Education) — Scientific Program
+// Hosted by ASI · American Oncology Institute · Citizens Specialty Hospital, Hyderabad
 
 export interface AgendaItem {
   start: string // "HH:MM" 24h
   end: string
-  topic: string
-  faculty?: string
-  kind?: 'talk' | 'break' | 'ceremony' | 'keynote' | 'panel' | 'debate' | 'interaction'
-  moderator?: string
-  panelists?: string[]
-  debateFor?: string
-  debateAgainst?: string
+  session: string // e.g. "Live Surgery", "Video Lecture 1"
+  topic?: string
   subtitle?: string
-}
-
-export interface Session {
-  id: string
-  title: string
-  chairLabel: 'Chairpersons' | 'Judges'
-  chairs: string[]
-  color: string // accent color for the session
-  items: AgendaItem[]
+  speakers?: string[]
+  speakersLabel?: string // defaults to "Speakers"
+  chairs?: string[]
+  kind: 'surgery' | 'lecture' | 'ceremony' | 'break'
 }
 
 export const EVENT = {
-  name: 'FEHMICON 2026',
-  theme: 'Artificial Intelligence in Obstetrics and Gynaecology',
-  cmeDay: {
-    label: 'CME · Sunday, 12th July 2026',
-    date: '2026-07-12',
-    venue: 'Ghulam Ahmed Hall',
-    venueDetail: 'Sultan Uloom Educational Society, MJ College, Banjara Hills-3, Hyderabad',
-  },
-  workshopDay: {
-    label: 'Workshop · Saturday, 11th July 2026',
-    venue: 'FehmiCare Hospital',
-    venueDetail: '37, Tahirvilla, Yousufguda Checkpost, Hyderabad',
-  },
+  name: 'R.I.S.E. PROGRAM',
+  fullName: 'Robotic Integrated Surgical Education',
+  tagline: 'Largest Robotix Conclave in Hyderabad',
+  highlight: 'Live Surgical Demonstrations & Keynotes',
+  theme: 'Redefining Robotic Surgeries in Cancer Care',
+  pillars: 'Prevention | Precision | Personalization',
+  hosts: 'ASI · American Oncology Institute · Citizens Specialty Hospital',
+  venue: 'Citizens Specialty Hospital',
+  venueDetail: 'Hyderabad',
+  // Set to the event date as "YYYY-MM-DD" to enable the LIVE indicators on the day,
+  // and dateLabel to the display text (e.g. "Sunday, 17th August 2026")
+  date: '',
+  dateLabel: '',
+  hours: '8:00 AM – 5:00 PM',
 }
 
-export const REGISTRATION: AgendaItem = {
-  start: '08:00',
-  end: '08:30',
-  topic: 'Registration',
-  kind: 'break',
-}
+const SURGICAL_TEAM = [
+  'Dr. Jagdishwar Goud Gajagowni',
+  'Dr. Bala Vikas Kumar',
+  'Dr. Pragnia',
+  'Dr. Soumya',
+]
 
-export const SESSIONS: Session[] = [
+export const AGENDA: AgendaItem[] = [
   {
-    id: 'session-1',
-    title: 'Session 1',
-    chairLabel: 'Chairpersons',
-    chairs: ['Dr G Vijaya Lakshmi', 'Dr Madhulata Alexander', 'Dr Suvarna'],
-    color: '#0d7377',
-    items: [
-      { start: '08:30', end: '08:45', topic: 'Welcome and Introduction', kind: 'ceremony' },
-      { start: '08:45', end: '09:00', topic: 'Artificial Intelligence for Smarter Antenatal Care', faculty: 'Dr Manjula Rao' },
-      { start: '09:00', end: '09:15', topic: 'Remote AI management to reduce Maternal and Perinatal Mortality', faculty: 'Dr Ismath Fathima' },
-      { start: '09:15', end: '09:30', topic: 'Perinatology: Powered by Artificial Intelligence', faculty: 'Dr Tejo Pratap' },
-      { start: '09:30', end: '09:45', topic: 'Interaction', kind: 'interaction' },
-    ],
+    start: '08:00', end: '09:00',
+    session: 'Registration',
+    kind: 'break',
   },
   {
-    id: 'session-2',
-    title: 'Session 2',
-    chairLabel: 'Chairpersons',
-    chairs: ['Dr Fahmida Banu', 'Dr Garuda Lakshmi', 'Dr Sumitra Vaidyam'],
-    color: '#b8860b',
-    items: [
-      { start: '09:45', end: '10:00', topic: 'Fetal Medicine — AI from Detection to Prediction', faculty: 'Dr Chinmayee Ratha' },
-      { start: '10:00', end: '10:15', topic: 'Seeing Beyond the Image: AI in Reproductive Ultrasound', faculty: 'Dr Mamata Deendayal' },
-      { start: '10:15', end: '10:30', topic: 'The Synergy of AI and Robotics in Hysterectomy', faculty: 'Dr Anita Kunnaiah' },
-      { start: '10:30', end: '10:45', topic: 'Interaction', kind: 'interaction' },
-    ],
+    start: '09:00', end: '10:00',
+    session: 'Live Surgery',
+    topic: 'Robotic Esophagectomy — Thoracic Stage',
+    speakers: SURGICAL_TEAM,
+    speakersLabel: 'Operating Team',
+    chairs: ['Dr. M Vijaya Kumar', 'Dr. Srinivasulu Mukta', 'Dr. Bala Murugan', 'Dr. Saravana Rajamanickam'],
+    kind: 'surgery',
   },
   {
-    id: 'session-3',
-    title: 'Session 3',
-    chairLabel: 'Chairpersons',
-    chairs: ['Dr Naga Sundari', 'Dr Jaisree Reddy'],
-    color: '#b05a7a',
-    items: [
-      { start: '10:45', end: '11:00', topic: 'Practical points to Clinicians for using AI in OP and IP', faculty: 'Dr Raja Poladi' },
-      { start: '11:00', end: '11:15', topic: 'AI in Endoscopy', faculty: 'Dr L Fahmida Banu' },
-    ],
+    start: '10:00', end: '10:15',
+    session: 'Video Lecture 1',
+    topic: 'Journey into Robotic HPB Surgery: From Basics to Complex Resections',
+    speakers: ['Dr. Kalayarasan Raja'],
+    chairs: ['Dr. Madhusudhan Chinthakindi', 'Dr. Subbaiah Shanmugam', 'Dr. Biswabasu Das', 'Dr. Jagannath Dixit', 'Dr. Mallik Singaraju'],
+    kind: 'lecture',
   },
   {
-    id: 'keynote',
-    title: 'Keynote & Inauguration',
-    chairLabel: 'Chairpersons',
-    chairs: ['Dr Bhanumathy', 'Dr Usha Nag'],
-    color: '#c2571a',
-    items: [
-      {
-        start: '11:15', end: '11:35',
-        topic: 'Keynote Address — Telesurgery: Bridging distances, expanding expertise',
-        faculty: 'Dr Syed Mohammed Ghouse',
-        kind: 'keynote',
-      },
-      { start: '11:35', end: '12:15', topic: 'Inauguration', kind: 'ceremony' },
-    ],
+    start: '10:15', end: '11:15',
+    session: 'Live Surgery',
+    topic: 'Robotic Esophagectomy — Abdominal Stage',
+    speakers: SURGICAL_TEAM,
+    speakersLabel: 'Operating Team',
+    chairs: ['Dr. Vijay Raj Patil', 'Dr. Kalayarasan Raja', 'Dr. Jalaluddin Akbar', 'Dr. Jagannath Dixit'],
+    kind: 'surgery',
   },
   {
-    id: 'session-4',
-    title: 'Session 4',
-    chairLabel: 'Chairpersons',
-    chairs: ['Dr Vandana', 'Dr Swetha Thummala'],
-    color: '#2e7d52',
-    items: [
-      { start: '12:15', end: '12:30', topic: 'Artificial Intelligence in Pathology: What Every Clinician Should Know', faculty: 'Dr Anuradha Sekaran' },
-      { start: '12:30', end: '12:45', topic: 'Artificial Intelligence — A New Dimension in Fertility Treatment', faculty: 'Dr Aishwarya Nupur' },
-      { start: '12:45', end: '13:45', topic: 'Lunch', kind: 'break' },
-    ],
+    start: '11:15', end: '11:30',
+    session: 'Video Lecture 2',
+    topic: 'Robotic Omentectomy & Para-aortic Lymph Node Dissection',
+    speakers: ['Dr. Pallavi V R'],
+    chairs: ['Dr. Anbukkani Subbian', 'Dr. AVS Suresh', 'Dr. Harjot Kaur Bajwa', 'Dr. R Suchitra', 'Dr. Suneel Kaushik'],
+    kind: 'lecture',
   },
   {
-    id: 'session-5',
-    title: 'Session 5',
-    chairLabel: 'Chairpersons',
-    chairs: ['Dr E Prabhavathi', 'Dr Sardarunnisa'],
-    color: '#2273a8',
-    items: [
-      {
-        start: '13:45', end: '14:30',
-        topic: 'Panel Discussion — AI updates in clinical practice',
-        kind: 'panel',
-        moderator: 'Dr Bharti Abhyankar',
-        panelists: [
-          'Dr Aruna Suman',
-          'Dr Jayanthi Reddy',
-          'Dr Jayabharti Vaddi',
-          'Dr Kola Sasikala',
-          'Dr Leela Digumati',
-          'Dr Narsimha Reddy',
-        ],
-      },
-    ],
+    start: '11:30', end: '12:30',
+    session: 'Live Surgery',
+    topic: 'Robotic Hysterectomy + Sentinel Node Biopsy',
+    speakers: SURGICAL_TEAM,
+    speakersLabel: 'Operating Team',
+    chairs: ['Dr. Jayanthi Reddy', 'Dr. Pallavi V R', 'Dr. Anbukkani Subbian', 'Dr. R Suchitra', 'Dr. Pujitha Devi Suraneni'],
+    kind: 'surgery',
   },
   {
-    id: 'session-6',
-    title: 'Session 6',
-    chairLabel: 'Chairpersons',
-    chairs: ['Dr Lakshmi Ratna', 'Dr Janaki', 'Dr Payal Bhargava'],
-    color: '#a8385c',
-    items: [
-      { start: '14:30', end: '14:45', topic: "AI a New tool in patient's Hand — Be Aware", faculty: 'Dr Ashwini Kumar Setya' },
-      { start: '14:45', end: '15:00', topic: 'AI Powered Cancer Screening', faculty: 'Dr Aruna Nigam' },
-      { start: '15:00', end: '15:15', topic: 'AI in Radiotherapy — Enhancing Accuracy and Efficiency', faculty: 'Dr Kaushik Bhattacharya' },
+    start: '12:30', end: '13:00',
+    session: 'Welcome Note & Inaugural Session',
+    speakers: [
+      'Dr. Prabhakar Palacharla — RCOO (South), AOI & Citizens Hospitals',
+      'Mr. Dileep Mangsuli — Chairman, CTSI',
+      'Dr. M Vijaya Kumar',
+      'Dr. Suresh Chandra Hari',
+      'Dr. T Jeevan Rao',
+      'Dr. B. Ramesh',
+      'Dr. Gaddi Diwakar',
     ],
+    speakersLabel: 'Dignitaries',
+    chairs: ['Dr. Mandala Iliaiah', 'Dr. Venkateshwarlu Perugu', 'Dr. Jagdishwar Goud Gajagowni', 'Dr. B Raju'],
+    kind: 'ceremony',
   },
   {
-    id: 'session-7',
-    title: 'Session 7',
-    chairLabel: 'Judges',
-    chairs: ['Dr Tripura Sundari', 'Dr Sandhya Dixit', 'Dr Manasa Badveli'],
-    color: '#6a4fa3',
-    items: [
-      {
-        start: '15:15', end: '15:45',
-        topic: 'Debate — AI vs Human Expertise',
-        subtitle: 'Who should have the final say in patient care?',
-        kind: 'debate',
-        debateFor: 'Dr Ujwala Prakash',
-        debateAgainst: 'Dr Rajshree Paladi',
-      },
-    ],
+    start: '13:00', end: '13:15',
+    session: 'Felicitation & Award of Excellence',
+    speakers: ['Dr. Gaddi Diwakar', 'Dr. M Vijaya Kumar', 'Dr. Srinivasulu Mukta', 'Dr. Jagdishwar Goud Gajagowni'],
+    speakersLabel: 'Presenters',
+    chairs: ['Dr. Madhusudhan Chinthakindi', 'Dr. Kalayarasan Raja', 'Dr. Saravana Rajamanickam'],
+    kind: 'ceremony',
   },
   {
-    id: 'session-8',
-    title: 'Session 8',
-    chairLabel: 'Chairpersons',
-    chairs: ['Dr Sahitya Bammidi', 'Dr Muthineni Rajini'],
-    color: '#0d7377',
-    items: [
-      { start: '15:45', end: '16:00', topic: 'How to Learn AI', faculty: 'Dr Shagufta Fehmina' },
-      { start: '16:00', end: '16:15', topic: 'From Data to Decisions: AI is Next Essential Clinical Tool', faculty: 'Dr Rajesh Kommu' },
-      { start: '16:15', end: '16:30', topic: 'Prize Distribution, Valedictory and Vote of Thanks', kind: 'ceremony' },
-    ],
+    start: '13:15', end: '13:45',
+    session: 'Lunch',
+    kind: 'break',
+  },
+  {
+    start: '13:45', end: '14:45',
+    session: 'Live Surgery',
+    topic: 'Robotic Hernioplasty (TAPP)',
+    speakers: ['Dr. Suresh Chandra Hari', 'Dr. Vishal Soni'],
+    speakersLabel: 'Operating Team',
+    chairs: ['Dr. Madhushekhar B', 'Dr. G Laxmana Sastry', 'Dr. Mandala Ilaiah', 'Dr. T Jeevan Rao', 'Dr. B Raju', 'Dr. B Ramesh'],
+    kind: 'surgery',
+  },
+  {
+    start: '14:45', end: '15:00',
+    session: 'Video Lecture 3',
+    topic: 'Beyond Lobectomy: Robotics for Complex Airway Reconstruction',
+    speakers: ['Dr. Saravana Rajamanickam'],
+    chairs: ['Dr. Bala Murugan', 'Dr. Vijay Raj Patil', 'Dr. Pratap Varma P', 'Dr. Nishith / Dr. Goutham Rao'],
+    kind: 'lecture',
+  },
+  {
+    start: '15:00', end: '16:40',
+    session: 'Live Surgery',
+    topic: 'Robotic LAR (Low Anterior Resection)',
+    speakers: SURGICAL_TEAM,
+    speakersLabel: 'Operating Team',
+    chairs: ['Dr. Subbaiah Shanmugam', 'Dr. Biswabasu Das', 'Dr. Rajkumar Rathinasamy', 'Dr. Dharmendra Kumar Vennam'],
+    kind: 'surgery',
+  },
+  {
+    start: '16:40', end: '17:00',
+    session: 'Vote of Thanks',
+    kind: 'ceremony',
   },
 ]
 
