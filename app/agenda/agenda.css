@@ -1,7 +1,14 @@
 /* FEHMICON 2026 — Interactive Scientific Agenda */
 
+/* globals.css locks body to 100vh with overflow hidden for the PDF viewer,
+   so the agenda page must be its own scroll container */
 .agenda-page {
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
   background: #f2f6f7;
   color: #16323a;
   -webkit-font-smoothing: antialiased;
@@ -83,17 +90,6 @@
   font-size: 0.8rem;
   opacity: 0.8;
   margin-top: 0.1rem;
-}
-
-.hero-credits {
-  margin-top: 0.9rem;
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  background: rgba(232, 60, 60, 0.9);
-  color: #fff;
-  padding: 0.3rem 0.7rem;
-  border-radius: 999px;
 }
 
 /* ---------- Toolbar ---------- */
@@ -457,18 +453,21 @@
 
 .brochure-link:active { background: #0a5c5f; }
 
-.footer-note {
-  margin-top: 1rem;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #b3261e;
+.footer-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
 }
 
-.footer-contact {
-  margin-top: 0.3rem;
-  font-size: 0.78rem;
-  color: #5b7a80;
+.brochure-link-secondary {
+  background: #fff;
+  color: #0d7377;
+  border: 2px solid #0d7377;
+  box-shadow: none;
 }
+
+.brochure-link-secondary:active { background: #e6f0f1; }
 
 @media (min-width: 640px) {
   .hero-meta { grid-template-columns: 1fr 1fr; }

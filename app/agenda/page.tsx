@@ -164,7 +164,6 @@ export default function AgendaPage() {
               <span className="meta-detail">{EVENT.workshopDay.venue} — {EVENT.workshopDay.venueDetail}</span>
             </div>
           </div>
-          <div className="hero-credits">{EVENT.credits}</div>
         </div>
       </header>
 
@@ -248,11 +247,16 @@ export default function AgendaPage() {
       </main>
 
       <footer className="agenda-footer">
-        <Link href="/" className="brochure-link">📄 View Full Event Brochure</Link>
-        <p className="footer-note">Last date for e-posters: 5th July 2026</p>
-        <p className="footer-contact">
-          For details: {EVENT.contact.join(' · ')} · {EVENT.website}
-        </p>
+        <div className="footer-buttons">
+          <Link href="/" className="brochure-link">📄 View Full Event Brochure</Link>
+          <a
+            href="/brochure.pdf"
+            download="FEHMICON 2026 Brochure.pdf"
+            className="brochure-link brochure-link-secondary"
+          >
+            ⬇️ Download Brochure (PDF)
+          </a>
+        </div>
       </footer>
     </div>
   )

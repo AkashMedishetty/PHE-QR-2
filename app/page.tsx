@@ -5,9 +5,18 @@ import Link from 'next/link'
 
 function AgendaFab() {
   return (
-    <Link href="/agenda" className="agenda-fab">
-      🗓️ Scientific Agenda
-    </Link>
+    <div className="fab-group">
+      <Link href="/agenda" className="agenda-fab">
+        🗓️ Scientific Agenda
+      </Link>
+      <a
+        href="/brochure.pdf"
+        download="FEHMICON 2026 Brochure.pdf"
+        className="agenda-fab download-fab"
+      >
+        ⬇️ Download PDF
+      </a>
+    </div>
   )
 }
 

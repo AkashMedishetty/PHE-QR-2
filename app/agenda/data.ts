@@ -37,9 +37,6 @@ export const EVENT = {
     venue: 'FehmiCare Hospital',
     venueDetail: '37, Tahirvilla, Yousufguda Checkpost, Hyderabad',
   },
-  credits: 'TGMC Approved · 2WS + 2 CME Credit Points',
-  contact: ['99496 96196', '83748 76030'],
-  website: 'www.fehmicare.com',
 }
 
 export const REGISTRATION: AgendaItem = {
