@@ -23,12 +23,18 @@ export const EVENT = {
   hosts: 'ASI · American Oncology Institute · Citizens Specialty Hospital',
   venue: 'Citizens Specialty Hospital',
   venueDetail: 'Hyderabad',
-  // Set to the event date as "YYYY-MM-DD" to enable the LIVE indicators on the day,
-  // and dateLabel to the display text (e.g. "Sunday, 17th August 2026")
-  date: '',
-  dateLabel: '',
+  // Event date as "YYYY-MM-DD" — enables the LIVE indicators on the day (IST)
+  date: '2026-07-12',
+  dateLabel: 'Sunday, 12th July 2026',
   hours: '8:00 AM – 5:00 PM',
 }
+
+export const COMMITTEE = [
+  { role: 'Chief Patron', name: 'Dr. Jagdishwar Goud Gajagowni' },
+  { role: 'Chairman', name: 'Dr. M. Bala Vikas Kumar' },
+  { role: 'Organising Secretary', name: 'Dr. P. Pragnia' },
+  { role: 'Advisor', name: 'Dr. Suresh Chandra Hari' },
+]
 
 const SURGICAL_TEAM = [
   'Dr. Jagdishwar Goud Gajagowni',

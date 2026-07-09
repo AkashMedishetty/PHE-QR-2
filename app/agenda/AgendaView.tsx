@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { EVENT, AGENDA, toMinutes, formatTime, AgendaItem } from './data'
+import { EVENT, AGENDA, COMMITTEE, toMinutes, formatTime, AgendaItem } from './data'
 import './agenda.css'
 
 type LiveStatus = 'past' | 'live' | 'upcoming' | 'none'
@@ -136,7 +136,13 @@ export default function AgendaPage() {
     <div className="agenda-page">
       <header className="agenda-hero">
         <div className="hero-inner">
-          <div className="hero-eyebrow">{EVENT.hosts}</div>
+          <div className="hero-logos">
+            <img src="/asi-logo.png" alt="The Association of Surgeons of India" className="logo-asi" />
+            <span className="logo-sep" aria-hidden />
+            <img src="/aoi-logo-white.png" alt="American Oncology Institute — Precision Cancer Care" className="logo-aoi" />
+            <span className="logo-sep" aria-hidden />
+            <img src="/citizens-logo-white.png" alt="Citizens Specialty Hospital" className="logo-citizens" />
+          </div>
           <h1 className="hero-title">
             R.I.S.E. <span className="hero-title-accent">PROGRAM</span>
           </h1>
@@ -201,6 +207,18 @@ export default function AgendaPage() {
           )
         })}
       </main>
+
+      <section className="committee">
+        <h2 className="committee-title">Organising Committee</h2>
+        <div className="committee-grid">
+          {COMMITTEE.map(m => (
+            <div key={m.role} className="committee-card">
+              <span className="committee-role">{m.role}</span>
+              <span className="committee-name">{m.name}</span>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <footer className="agenda-footer">
         <p>{EVENT.name} · {EVENT.fullName}</p>
