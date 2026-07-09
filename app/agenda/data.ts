@@ -30,10 +30,10 @@ export const EVENT = {
 }
 
 export const COMMITTEE = [
+  { role: 'Advisor', name: 'Dr. Suresh Chandra Hari' },
   { role: 'Chief Patron', name: 'Dr. Jagdishwar Goud Gajagowni' },
   { role: 'Chairman', name: 'Dr. M. Bala Vikas Kumar' },
   { role: 'Organising Secretary', name: 'Dr. P. Pragnia' },
-  { role: 'Advisor', name: 'Dr. Suresh Chandra Hari' },
 ]
 
 const SURGICAL_TEAM = [
