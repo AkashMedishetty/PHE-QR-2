@@ -82,7 +82,7 @@ export default function PDFViewer() {
     return (
       <div className="pdf-container">
         <iframe
-          src="/brochure.pdf"
+          src="/fehmicon-2026-brochure.pdf"
           className="pdf-viewer"
           title="Event Brochure"
           onLoad={() => setLoading(false)}
@@ -147,7 +147,7 @@ export default function PDFViewer() {
   return (
     <div className="pdf-container">
       <iframe
-        src="/brochure.pdf"
+        src="/fehmicon-2026-brochure.pdf"
         className="pdf-viewer"
         title="Event Brochure"
         onLoad={() => setLoading(false)}

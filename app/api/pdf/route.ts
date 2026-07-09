@@ -9,10 +9,10 @@ export async function GET(request: NextRequest) {
   try {
     // Try multiple possible paths for the PDF file
     const possiblePaths = [
-      join(process.cwd(), 'public', 'brochure.pdf'),
-      join(process.cwd(), 'brochure.pdf'),
-      join(process.cwd(), 'app', 'public', 'brochure.pdf'),
-      '/tmp/brochure.pdf', // Vercel temp directory
+      join(process.cwd(), 'public', 'fehmicon-2026-brochure.pdf'),
+      join(process.cwd(), 'fehmicon-2026-brochure.pdf'),
+      join(process.cwd(), 'app', 'public', 'fehmicon-2026-brochure.pdf'),
+      '/tmp/fehmicon-2026-brochure.pdf', // Vercel temp directory
     ]
     
     let pdfBuffer: Buffer | null = null

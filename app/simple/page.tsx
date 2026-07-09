@@ -10,7 +10,7 @@ export default function SimplePDFViewer() {
       contain: 'layout style paint'
     }}>
       <iframe
-        src="/brochure.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0&messages=0&view=FitH&zoom=50"
+        src="/fehmicon-2026-brochure.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0&messages=0&view=FitH&zoom=50"
         style={{
           width: '100vw',
           height: '100vh',

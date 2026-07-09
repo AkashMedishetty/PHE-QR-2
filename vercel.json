@@ -1,11 +1,11 @@
 {
   "headers": [
     {
-      "source": "/brochure.pdf",
+      "source": "/fehmicon-2026-brochure.pdf",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+          "value": "public, max-age=3600, must-revalidate"
         }
       ]
     }

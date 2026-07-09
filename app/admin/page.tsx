@@ -47,7 +47,7 @@ export default function AdminPage() {
         <div style={{ marginTop: '2rem', textAlign: 'left' }}>
           <h3>How to update the brochure:</h3>
           <ol style={{ marginLeft: '1.5rem', lineHeight: '1.6' }}>
-            <li>Replace the file <code>public/brochure.pdf</code> with your new brochure</li>
+            <li>Replace the file <code>public/fehmicon-2026-brochure.pdf</code> with your new brochure</li>
             <li>Deploy the updated app to Vercel</li>
             <li>The QR code will automatically show the new brochure</li>
             <li>No need to reprint badges - the QR code stays the same!</li>
@@ -59,7 +59,7 @@ export default function AdminPage() {
         <h2>Current Setup</h2>
         <p>Your app is configured to serve the PDF file located at:</p>
         <div className="qr-url">
-          <code>public/brochure.pdf</code>
+          <code>public/fehmicon-2026-brochure.pdf</code>
         </div>
         <p style={{ marginTop: '1rem' }}>
           To update the brochure, simply replace this file and redeploy to Vercel.

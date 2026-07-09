@@ -92,6 +92,43 @@
   margin-top: 0.1rem;
 }
 
+.hero-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.hero-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: #e8b73a;
+  color: #16323a;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btn:active { background: #d4a52f; }
+
+.hero-btn-outline {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  box-shadow: none;
+}
+
+.hero-btn-outline:active { background: rgba(255, 255, 255, 0.22); }
+
+@media (min-width: 640px) {
+  .hero-actions { max-width: 420px; }
+}
+
 /* ---------- Toolbar ---------- */
 .agenda-toolbar {
   position: sticky;

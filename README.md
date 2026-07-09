@@ -12,10 +12,10 @@ A simple Next.js app that serves a PDF brochure via QR code for event badges.
 
 ## How it works
 
-1. The app serves a PDF file from `public/brochure.pdf`
+1. The app serves a PDF file from `public/fehmicon-2026-brochure.pdf`
 2. QR codes point to your domain (e.g., `https://your-app.vercel.app`)
 3. When scanned, the QR code opens the PDF directly in the browser
-4. To update the brochure, simply replace `public/brochure.pdf` and redeploy
+4. To update the brochure, simply replace `public/fehmicon-2026-brochure.pdf` and redeploy
 
 ## Setup
 
@@ -25,7 +25,7 @@ A simple Next.js app that serves a PDF brochure via QR code for event badges.
    ```
 
 2. **Add your brochure:**
-   - Replace `public/brochure.pdf` with your event brochure PDF
+   - Replace `public/fehmicon-2026-brochure.pdf` with your event brochure PDF
 
 3. **Deploy to Vercel:**
    ```bash
@@ -47,13 +47,13 @@ A simple Next.js app that serves a PDF brochure via QR code for event badges.
 │   ├── api/pdf/route.ts  # API endpoint to serve PDF
 │   └── layout.tsx        # App layout
 ├── public/
-│   └── brochure.pdf      # Your event brochure (replace this)
+│   └── fehmicon-2026-brochure.pdf      # Your event brochure (replace this)
 └── package.json
 ```
 
 ## Updating the Brochure
 
-1. Replace `public/brochure.pdf` with your new brochure
+1. Replace `public/fehmicon-2026-brochure.pdf` with your new brochure
 2. Commit and push to GitHub
 3. Vercel will automatically redeploy
 4. The same QR code will now show the updated brochure
