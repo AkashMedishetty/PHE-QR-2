@@ -166,6 +166,24 @@ export default function AgendaPage() {
               </span>
             </div>
           </div>
+
+          <div className="hero-actions">
+            <a
+              href="/rise-program.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-btn"
+            >
+              📄 Open Program
+            </a>
+            <a
+              href="/rise-program.pdf"
+              download="RISE Program.pdf"
+              className="hero-btn hero-btn-outline"
+            >
+              ⬇️ Download PDF
+            </a>
+          </div>
         </div>
       </header>
 
@@ -221,6 +239,23 @@ export default function AgendaPage() {
       </section>
 
       <footer className="agenda-footer">
+        <div className="footer-buttons">
+          <a
+            href="/rise-program.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-btn"
+          >
+            📄 Open Full Program (PDF)
+          </a>
+          <a
+            href="/rise-program.pdf"
+            download="RISE Program.pdf"
+            className="footer-btn footer-btn-outline"
+          >
+            ⬇️ Download Program
+          </a>
+        </div>
         <p>{EVENT.name} · {EVENT.fullName}</p>
         <p className="footer-hosts">{EVENT.hosts}</p>
       </footer>
